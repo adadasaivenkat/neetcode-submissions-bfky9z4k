@@ -1,0 +1,22 @@
+class Solution {
+public:
+    bool isMonotonic(vector<int>& nums) {
+        bool inc=false,dec=false;
+        for(int i=1; i<nums.size(); i++){
+            if(nums[i-1]<=nums[i]) inc=true;
+            else{
+                inc=false;
+                break;
+            }
+        }
+        for(int i=1; i<nums.size(); i++){
+            if(nums[i-1]>=nums[i]) dec=true;
+            else{
+                dec=false;
+                break;
+            }
+        }
+        if(inc || dec) return true;
+        else return false;
+    }
+};
